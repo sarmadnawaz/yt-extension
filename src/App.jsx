@@ -1,17 +1,14 @@
 import "./App.css";
-import Popover from "./components/UI/Popover";
-import ServicesList from "./components/ServicesList";
-// import TranslateTranscript from "./features/TranslateTranscript";
+import RenderFeature from "./features";
+import AppContainer from "./components/UI/Container";
+import { FeatureProvider } from "./context/FeatureProvider";
 
-function App() {
-  return (
-    <Popover open={true} onClose={() => {}}>
-      <div className="max-w-md min-w-[350px] px-4 py-6 bg-gradient-to-b from-indigo-600 bg-blue-500 rounded-lg">
-        <ServicesList />
-        {/* <TranslateTranscript /> */}
-      </div>
-    </Popover>
-  );
-}
+const App = () => (
+  <AppContainer>
+    <FeatureProvider>
+      <RenderFeature />
+    </FeatureProvider>
+  </AppContainer>
+);
 
 export default App;
